@@ -1,40 +1,52 @@
-body {
-  background-color: #f9f9f9;
-  color: #333;
+:root {
+  --grey: oklch(80% 3% 200);
+  --collor-accent: oklch(65% 50% 70);
+  --collor-accent-bg: oklch(65% 50% 70 / 25%);
 }
 
-header {
-  background-color: gray;
-  color: #fff;
-}
-
-header h1 {
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-nav ul {
-  list-style: none;
+body {   
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 1cm;
+ }
+nav {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--grey);
 }
 
 nav a {
-  color: #fff;
+  flex: 1;
   text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-main {
-  max-width: 960px;
-  margin: 2rem auto;
-}
-
-footer {
+  color: inherit;
   text-align: center;
-  margin-top: 2rem;
+  padding: 0.5em;
 }
+
+nav .current {
+border-bottom-width: 0.4em;
+border-bottom-style: solid;
+border-bottom-color: var(--grey);
+padding: 0.1em;
+
+}
+nav a:hover{
+border-bottom-width: 0.4em;
+border-bottom-style: solid;
+border-bottom-color: var(--collor-accent);
+padding-bottom: -0.1em;
+background-color: var(--collor-accent-bg);
+}
+
+input,textarea,button {
+font: inherit;
+width: 100%;
+box-sizing: border-box;
+}
+
+label, input, textarea, button {
+display: block;
+}
+label { margin-block: 1rem;}

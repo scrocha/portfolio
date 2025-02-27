@@ -1,3 +1,36 @@
 body {
-    font: 100%/1.5 system-ui;
-   }
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #007acc;
+  color: #fff;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+}

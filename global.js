@@ -16,7 +16,8 @@ let pages = [
     {url: "", title: "Sobre Mim"},
     {url: "projects/", title: "Projetos"},
     {url: "resume/", title: "Currículo"},
-    {url: "contact/", title: "Contato"}
+    {url: "contact/", title: "Contato"},
+    {url: "https://github.com/scrocha", title: "GitHub"}
 ];
 
 const ARE_WE_HOME = document.documentElement.classList.contains("home");
@@ -31,13 +32,22 @@ document.body.insertBefore(nav, h1.nextSibling);
 for (let p of pages) {
     let url = p.url;
     let title = p.title;
-    
+
     if (!ARE_WE_HOME && !url.startsWith("http")) {
         url = "../" + url;
     }
     
-    nav.insertAdjacentHTML("beforeend", `<a href="${ url }">${ title }</a>`);
-    if (location.pathname.includes(url)) {
-        document.title = title;
+    let ref = document.createElement("a");
+    ref.href = url;
+    ref.textContent = title;
+
+    if (ref.host === location.host && ref.pathname === location.pathname) {
+        ref.classList.add("current");
     }
+
+    if (ref.host !== location.host) {
+        ref.target = "_blank";
+    }
+
+    nav.append(ref);
 }

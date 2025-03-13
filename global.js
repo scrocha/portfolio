@@ -34,7 +34,7 @@ for (let p of pages) {
     let title = p.title;
 
     if (!ARE_WE_HOME && !url.startsWith("http")) {
-        url = "../portfolio/" + url;
+        url = "../" + url;
     }
     
     let ref = document.createElement("a");
